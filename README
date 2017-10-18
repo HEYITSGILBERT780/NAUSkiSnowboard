@@ -1,0 +1,13 @@
+NAU Ski and Snowboard Webpage
+
+First webpage made for a ski and snowboard club at Northern Arizona University. Includes a home page, 
+events page that lists the club's future events, and an about page that includes the club info,
+members, and contact info.
+
+Events can be added to the database using a form to be displayed on the events page. 
+
+Webpage made using:
+Front-End - HTML5, CSS3, JavaScript, Bootstrap, and jQuery
+Back-End - NodeJS, NPM, ExpressJS
+Database - noSQL MongoDB
+Developed on Cloud9 IDE and source versioned with git.
