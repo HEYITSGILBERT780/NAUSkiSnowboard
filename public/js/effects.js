@@ -1,11 +1,9 @@
 $(document).ready(function() {
-    $("#content").fadeIn(2000);
+    $("#home-content").fadeIn(2000);
 });
 
-$(document).ready(function(){
-   var height = $(window).height();  //getting windows height
-   $('#myCarousel').css('height',height+'px');   //and setting height of carousel
-   $('.carousel-inner > .item > img').css('height',height+'px');
+$(document).ready(function() {
+    $("#about-title").fadeIn(2000);
 });
 
 $(".dropdown").hover(function() {

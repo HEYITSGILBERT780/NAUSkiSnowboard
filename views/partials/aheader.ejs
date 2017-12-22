@@ -20,63 +20,25 @@
         <link rel="icon" href="../img/logo.png">
     </head>
     <body class="about-bg">
-      <div class="bannerContainer">
-        <header id="main-header">
-          <nav class="navbar navbar-fat navbar-clean navbar-fixed-top">
-            <div class="container-fluid">
-              <!-- Brand and toggle get grouped for better mobile display -->
-              <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                  <span class="sr-only">Toggle navigation</span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                  <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="/home"><img id="logo" src="../img/logo.png"></a>
-              </div>
-          
-              <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-                  <li><a href="/home">Home</a></li>
-                  <li><a href="/events">Events</a></li>
-                  <li class="dropdown">
-                    <a href="/about" class="active">About Us</a>
-                    <ul class="dropdown-menu">
-                      <li><a href="/about/info">Info</a></li>
-                      <li><a href="/about/members">Members</a></li>
-                      <li><a href="/about/contact">Contact</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
-          </nav>
-        </header>
+      <header id="main-header">
+        <nav class="navbar navbar-fat navbar-clean">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <a class="navbar-brand" href="/home"><img id="logo" src="../img/logo.png"></a>
         
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-          <!-- Indicators -->
-          <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-          </ol>
-  
-          <!-- Wrapper for slides -->
-          <div class="carousel-inner" role="listbox">
-            <div class="item active">
-              <img src="../img/lift1.jpg" alt="first-slide">
-            </div>
-            <div class="item">
-              <img src="../img/grind2.jpg" alt="second-slide">
-            </div>
-            <div class="item">
-              <img src="../img/grind.jpg" alt="third-slide">
-            </div>
-            <div class="carousel-caption">
-                <h1>About Us</h1>
-                <hr>
-            </div>
-          </div>
-        </div>
-      </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="/home" class="active">Home</a></li>
+              <li><a href="/events">Events</a></li>
+              <li class="dropdown">
+                <a href="/about">About Us</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="/about/info">Info</a></li>
+                    <li><a href="/about/members">Members</a></li>
+                    <li><a href="/about/contact">Contact</a></li>
+                  </ul>
+                </li>
+            </ul>
+          </div><!-- /.container-fluid -->
+        </nav>
+      </header>

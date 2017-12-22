@@ -1,58 +1,16 @@
+/* default css and sizes follow mobile first design */
 html {
     height: 100%;
 }
 
-.navbar {
-    position:absolute;
-    z-index:10;
-    background:#fff;
-    width:100%;
-    border: none;
-}
-
-.bannerContainer {
-    position: relative; 
-    height: 500px;
-}
-
-/* CUSTOMIZE THE CAROUSEL
--------------------------------------------------- */
-
-.carousel {
-    position:absolute;
-    top:0;
-    height: 100%;
-    margin-bottom: 60px;
-}
-
- /*Since positioning the image, we need to help out the caption */
-.carousel-caption > h1 {
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    font-size: 5em;
-    font-weight: 300;
-    text-transform: uppercase;
-    /*padding-bottom: 700px;*/
-}
-
-.carousel-caption > hr {
-    padding-bottom: 700px;
-    width: 200px;
-}
-
-/* Declare heights because of positioning of img element */
-.carousel .item {
-    height: 100%;
-}
-
-.carousel-inner > .item > img {
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
 #logo {
-    height: 600%;
+    height: 250%;
+}
+
+/* background photos */
+.about-bg {
+    background: url('../img/group3.jpg') no-repeat fixed;
+    background-size: 100% 50%;   
 }
 
 .home-bg {
@@ -62,11 +20,19 @@ html {
 }
 
 .events-bg {
-    background-image: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../img/snowboard.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-image: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../img/snowboard.jpg') no-repeat fixed;
     background-position: 50% 80%;
     background-size: cover;
+}
+
+/* navbar editing */
+
+.navbar {
+    position: absolute;
+    z-index: 10;
+    background: #fff;
+    width: 100%;
+    border: none;
 }
 
 /* white underline under nav sections when mouse is hovered over it */
@@ -81,36 +47,68 @@ html {
     border-bottom: 1px solid white;
 }
 
+#main-header .navbar-fat .navbar-nav {
+    position: absolute;
+    right: 35px;
+    display: inline-flex;
+}
+
 #main-header .navbar-fat .navbar-nav > li > a {
-    padding: 55px 0px 10px 0px;
+    padding: 20px 0px 5px 0px;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
-    font-size: 20px;
+    font-size: 10px; 
     text-transform: uppercase;
 }
 
 #main-header .navbar-nav > li + li {
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 #main-header .navbar-fat {
-    background: linear-gradient(0deg,rgba(0,0,0,0) 0,rgba(0,0,0,.5) 100%);
-    padding: 20px 60px 20px 80px;
+    background: linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,.5) 100%);
+    padding: 5px 0px;
 }
 
 #main-header .navbar-clean .navbar-nav > li > a {
     color: #fff;
 }
 
-#content {
+/* homepage */
+#home-content {
     display: none;
-    padding-top: 7%;
+    padding-top: 18%;
     text-shadow: 0px 4px  3px  rgba(0,0,0,0.4),
                  0px 8px  13px rgba(0,0,0,0.1),
                  0px 18px 23px rgba(0,0,0,0.1);
 }
 
-#content h1 {
+#home-content h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#home-content h3 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+}
+
+/* events page */
+
+/* about us page */
+/* change media queries after finishing about page */
+#about-title {
+    display: none;
+    text-shadow: 0px 4px  3px  rgba(0,0,0,0.4),
+                 0px 8px  13px rgba(0,0,0,0.1),
+                 0px 18px 23px rgba(0,0,0,0.1);
     font-family: 'Oswald', sans-serif;
     font-size: 3.5em;
     font-weight: 300;
@@ -119,42 +117,138 @@ html {
     text-transform: uppercase;
 }
 
-#content h3 {
-    font-family: 'Oswald', sans-serif;
-    font-weight: 300;
-    color: #fff;
-    text-align: center;
-}
-
-
 hr {
-    width: 400px;
+    width: 175px;
     border-top: 1px solid #f8f8f8;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.navbar-nav > li > .dropdown-menu {
-    margin-top: 10px;
+/* media queries for better design accross different screen sizes */
+
+/* For tablet display */
+@media only screen and (min-width: 768px) {
+    #logo {
+        height:  300%;
+    }
+    
+    #main-header .navbar-fat .navbar-nav > li > a {
+        padding: 40px 0px 10px 0px;
+        font-size: 14px;    
+    }
+    
+    #main-header .navbar-nav > li + li {
+        margin-left: 20px;
+    }
+    
+    #main-header .navbar-fat {
+        padding: 20px 50px 20px 70px;    
+    }
+    
+    #home-content {
+        padding-top: 9%;
+    }
+    
+    #home-content h1 {
+        font-size: 2em;
+    }
+    
+    #home-content h3 {
+        font-size: 18px;
+    }
+    
+    hr {
+        width: 250px;
+    }
+    
+    .navbar-nav > li > .dropdown-menu {
+        margin-top: 10px;
+    }
+    
+    .dropdown-menu {
+        border: none;
+        min-width: 150px;
+        font-size: 16px;
+        border-radius: 0;
+        padding: 0px;
+    }
+    
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus {
+        color: #fff;
+        background-color: #3d69e7;
+    }
+    
+    .dropdown-menu > li > a {
+        padding: 10px 20px;
+        font-family: 'Raleway', sans-serif;
+        font-weight: 300;
+    }
 }
 
-.dropdown-menu {
-    border: none;
-    min-width: 150px;
-    font-size: 16px;
-    border-radius: 0;
-    padding: 0px;
+/* For desktop display */
+@media only screen and (min-width: 992px) {
+    #logo {
+        height: 450%;
+    }
+    
+    #main-header .navbar-fat .navbar-nav > li > a {
+        padding: 40px 0px 10px 0px;
+        font-size: 18px;    
+    }
+    
+    #main-header .navbar-nav > li + li {
+        margin-left: 20px;
+    }
+    
+    #main-header .navbar-fat {
+        padding: 20px 20px 20px 70px;    
+    }
+    
+    #home-content {
+        padding-top: 3.5%;
+    }
+    
+    #home-content h1 {
+        font-size: 3em;
+    }
+    
+    #home-content h3 {
+        font-size: 22px;
+    }
+    
+    hr {
+        width: 360px;
+    }
 }
 
-.dropdown-menu > li > a:hover,
-.dropdown-menu > li > a:focus {
-    color: #fff;
-    background-color: #3d69e7;
+/* For large desktop display*/
+@media only screen and (min-width: 1920px) {
+    #logo {
+        height: 600%;
+    }
+    
+    #main-header .navbar-fat .navbar-nav > li > a {
+        padding: 55px 0px 10px 0px;
+        font-size: 20px;    
+    }
+    
+    #main-header .navbar-fat {
+        padding: 20px 60px 20px 80px;    
+    }
+    
+    #home-content {
+        padding-top: 7%;
+    }
+    
+    #home-content h1 {
+        font-size: 3.5em;
+    }
+    
+    #home-content h3 {
+        font-size: 24px;
+    }
+    
+    hr {
+        width: 400px;
+    }
 }
-
-.dropdown-menu > li > a {
-    padding: 10px 20px;
-    font-family: 'Raleway', sans-serif;
-    font-weight: 300;
-}
-
-
