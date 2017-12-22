@@ -4,10 +4,11 @@ First webpage made for a ski and snowboard club at Northern Arizona University. 
 events page that lists the club's future events, and an about page that includes the club info,
 members, and contact info.
 
-Events can be added to the database using a form to be displayed on the events page. 
+Events can be added to the database using a form on a seperate form page. Events are displayed after
+adding them through a form.
 
 Webpage made using:
 Front-End - HTML5, CSS3, JavaScript, Bootstrap, and jQuery
 Back-End - NodeJS, NPM, ExpressJS
 Database - noSQL MongoDB
-Developed on Cloud9 IDE and source versioned with git.
+Developed on Cloud9 IDE and used git for version control.
