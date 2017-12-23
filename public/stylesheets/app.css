@@ -1,4 +1,4 @@
-/* default css and sizes follow mobile first design */
+/* css for webpage and sizes follow mobile first design */
 html {
     height: 100%;
 }
@@ -7,11 +7,7 @@ html {
     height: 250%;
 }
 
-/* background photos */
-.about-bg {
-    background: url('../img/group3.jpg') no-repeat fixed;
-    background-size: 100% 50%;   
-}
+/********** Background Photos **********/
 
 .home-bg {
     background: url('../img/ski.jpg') no-repeat fixed;
@@ -20,12 +16,24 @@ html {
 }
 
 .events-bg {
-    background-image: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../img/snowboard.jpg') no-repeat fixed;
+    background-image: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../img/snowboard.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-position: 50% 80%;
     background-size: cover;
 }
 
-/* navbar editing */
+.about-bg {
+    background: url('../img/group3.jpg') no-repeat fixed;
+    background-size: 100% 50%;   
+}
+
+.form-bg {
+    background: url('../img/group2.jpg') no-repeat fixed;
+    background-size: cover;
+}
+
+/********** Navbar Editing **********/
 
 .navbar {
     position: absolute;
@@ -74,7 +82,8 @@ html {
     color: #fff;
 }
 
-/* homepage */
+/********** Home Page **********/
+
 #home-content {
     display: none;
     padding-top: 18%;
@@ -100,9 +109,29 @@ html {
     text-align: center;
 }
 
-/* events page */
+#home-content hr {
+    width: 175px;
+    border-top: 1px solid #f8f8f8;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
 
-/* about us page */
+/********** Events Page **********/
+
+#event-title {
+    display: none;
+}
+
+#event-title h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.5em;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/********** About Us Page **********/
+
 /* change media queries after finishing about page */
 #about-title {
     display: none;
@@ -115,12 +144,6 @@ html {
     color: #fff;
     text-align: center;
     text-transform: uppercase;
-}
-
-hr {
-    width: 175px;
-    border-top: 1px solid #f8f8f8;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 /* media queries for better design accross different screen sizes */
@@ -156,7 +179,7 @@ hr {
         font-size: 18px;
     }
     
-    hr {
+    #home-content hr {
         width: 250px;
     }
     
@@ -216,7 +239,7 @@ hr {
         font-size: 22px;
     }
     
-    hr {
+    #home-content hr {
         width: 360px;
     }
 }
@@ -227,6 +250,7 @@ hr {
         height: 600%;
     }
     
+    /* Navbar */
     #main-header .navbar-fat .navbar-nav > li > a {
         padding: 55px 0px 10px 0px;
         font-size: 20px;    
@@ -236,6 +260,7 @@ hr {
         padding: 20px 60px 20px 80px;    
     }
     
+    /* Home Page */ 
     #home-content {
         padding-top: 7%;
     }
@@ -248,7 +273,17 @@ hr {
         font-size: 24px;
     }
     
-    hr {
+    #home-content hr {
         width: 400px;
+    }
+    
+    /* Event Page */
+    #event-title h1 {
+        padding-top: 11%;
+        font-size: 3.5em;
+    }
+    
+    #event-title hr {
+        width: 300px;
     }
 }

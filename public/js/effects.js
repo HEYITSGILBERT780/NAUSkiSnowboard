@@ -1,16 +1,26 @@
+/*global $*/
+
+/********* jQuery for added effects to different pages **********/
+
 $(document).ready(function() {
     $("#home-content").fadeIn(2000);
 });
 
 $(document).ready(function() {
-    $("#about-title").fadeIn(2000);
+    $("#event-title").fadeIn(2000);
 });
 
-$(".dropdown").hover(function() {
-    $(this).find('.dropdown-menu').stop(true, true).delay(50).fadeIn(150);
-}, function() {
-    $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(500);
-});
+if ( $(window).width() > 739) {
+    $(".dropdown").hover(function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(50).fadeIn(150);
+    }, function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(500);
+    }); 
+} else {
+    $(".dropdown").hover(function() {
+        $('.dropdown-menu').css('display', 'none');    
+    }); 
+}
 
 $(function() {
     $('.dropdown-menu > li > a').hover(function() {
