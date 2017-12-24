@@ -1,5 +1,5 @@
 /* css for webpage and sizes follow mobile first design */
-html {
+body, html {
     height: 100%;
 }
 
@@ -16,7 +16,7 @@ html {
 }
 
 .events-bg {
-    background-image: linear-gradient( rgba(0,0,0,.5), rgba(0,0,0,.5) ), url('../img/snowboard.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/snowboard.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 80%;
@@ -24,12 +24,17 @@ html {
 }
 
 .about-bg {
-    background: url('../img/group3.jpg') no-repeat fixed;
-    background-size: 100% 50%;   
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/group1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: 0% 45%;
+    height: 100%;
+    position: relative;
 }
 
 .form-bg {
-    background: url('../img/group2.jpg') no-repeat fixed;
+    background: url('../img/grind.jpg') no-repeat fixed;
     background-size: cover;
 }
 
@@ -132,12 +137,11 @@ html {
 
 /********** About Us Page **********/
 
-/* change media queries after finishing about page */
 #about-title {
     display: none;
-    text-shadow: 0px 4px  3px  rgba(0,0,0,0.4),
-                 0px 8px  13px rgba(0,0,0,0.1),
-                 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#about-title h1 {
     font-family: 'Oswald', sans-serif;
     font-size: 3.5em;
     font-weight: 300;
@@ -146,7 +150,92 @@ html {
     text-transform: uppercase;
 }
 
-/* media queries for better design accross different screen sizes */
+.arrow {
+    opacity: 0;
+    position: absolute;
+    bottom: -40%;
+    left: 50%;
+    top: 50%;
+    transform-origin: 50% 50%;
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.arrow-first {
+    animation: arrow-movement 2s ease-in-out infinite;
+}
+
+.arrow-second {
+    animation: arrow-movement 2s 1s ease-in-out infinite;
+}
+
+.arrow:before, .arrow:after {
+    background: #fff;
+    content: '';
+    display: block;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 30px;
+}
+
+.arrow:before {
+    transform: rotate(45deg) translateX(-23%);
+    transform-origin: top left;
+}
+
+.arrow:after {
+    transform: rotate(-45deg) translateX(23%);
+    transform-origin: top right;
+}
+
+@keyframes arrow-movement {
+    0% {
+        opacity: 0;
+        top: 45%;
+    }
+  
+    70% {
+        opacity: 1;
+    }
+    
+    100% {
+        opacity: 0;
+    }
+}
+
+#info h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5em;
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    color: #000;
+    /*border-bottom: 1px solid black;*/
+}
+
+#info hr {
+    width: 100px;
+    background-color: #000;    
+    height: 2px;
+}
+
+/********** Form Page **********/
+
+#form-title {
+    display: none;
+}
+
+#form-title h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 3.5em;
+    font-weight: 300;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/********** Media Queries **********/
 
 /* For tablet display */
 @media only screen and (min-width: 768px) {
@@ -280,10 +369,25 @@ html {
     /* Event Page */
     #event-title h1 {
         padding-top: 11%;
-        font-size: 3.5em;
+        font-size: 3.75em;
     }
     
     #event-title hr {
-        width: 300px;
+        width: 325px;
+    }
+    
+    /* About Us Page */
+    #about-title h1 {
+        padding-top: 27%;
+        font-size: 5em;
+    }
+    
+    #about-title hr {
+        width: 200px;
+    }
+    
+    /* Form Page */
+    #form-title hr {
+        width: 225px;
     }
 }

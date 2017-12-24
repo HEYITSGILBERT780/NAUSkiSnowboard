@@ -10,6 +10,14 @@ $(document).ready(function() {
     $("#event-title").fadeIn(2000);
 });
 
+$(document).ready(function() {
+    $("#about-title").fadeIn(2000);
+});
+
+$(document).ready(function() {
+    $("#form-title").fadeIn(2000);
+});
+
 if ( $(window).width() > 739) {
     $(".dropdown").hover(function() {
         $(this).find('.dropdown-menu').stop(true, true).delay(50).fadeIn(150);
