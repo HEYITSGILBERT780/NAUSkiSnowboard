@@ -10,7 +10,7 @@ $(document).ready(function() {
     
      /* Every time the window is scrolled load section */
     $(window).scroll( function(){
-        lazyload('.hideinfo', 2000);
+        lazyload('.hideinfo', 1500);
     });
     
     $(window).scroll( function(){
@@ -25,15 +25,17 @@ $(document).ready(function() {
         $('.hideinfo').animate({'opacity':'1'},2000);    
     }
     
-    if (window.location == '#officers' && window.location != '/about') {
-        $('.hideinfo').css('opacity','1');    
-        $('.hideo').animate({'opacity': '1'}, 2000);
+    if ($('.hideo').css('opacity') == '1') {
+        $(window).on('load', function() {
+            $('.hideinfo').css('opacity', '1 !important');
+        });
     }
     
-    if (window.location == '#contact' && window.location != '/about') {
-        $('.hideinfo').css('opacity','1');   
-        $('.hideo').css('opacity','1');  
-        $('.hidecontact').animate({'opacity':'1'},2000); 
+    if ($('.hidecontact').css('opacity') == '1') {
+        $(window).on('load', function() {
+            $('.hideinfo').css('opacity', '1 !important');
+            $('.hideo').css('opacity', '1 !important' );
+        });    
     }
 });
 

@@ -1,7 +1,11 @@
 /* css for webpage and sizes follow mobile first design */
 body, html {
     height: 100%;
-    background-color: #f8f9f8;
+    /*overflow-x: hidden;*/
+}
+
+.row {
+    width: 100%;
 }
 
 #logo {
@@ -29,7 +33,7 @@ body, html {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: 0% 45%;
+    background-position: 50% 45%;
     height: 100%;
     position: relative;
     margin-bottom: 25px;
@@ -97,6 +101,7 @@ body, html {
     text-shadow: 0px 4px  3px  rgba(0,0,0,0.4),
                  0px 8px  13px rgba(0,0,0,0.1),
                  0px 18px 23px rgba(0,0,0,0.1);
+    margin-left: 40px; 
 }
 
 #home-content h1 {
@@ -141,15 +146,23 @@ body, html {
 
 #about-title {
     display: none;
+    margin-left: 25px;
+    padding-left: 25px;
 }
 
 #about-title h1 {
+    padding-top: 45%;
     font-family: 'Oswald', sans-serif;
-    font-size: 3.5em;
+    font-size: 2em;
     font-weight: 300;
     color: #fff;
     text-align: center;
     text-transform: uppercase;
+}
+
+#about-title hr {
+    width: 75px;
+    margin-top: -3px;
 }
 
 /*Animated Arrow at bottom of background pic*/
@@ -208,50 +221,58 @@ body, html {
 }
 
 /*info section*/
-.hideinfo, .hidecontact, .hideo {
+.hideinfo {
+    opacity: 0;
+}
+
+.hideo {
+    opacity: 0;
+}
+
+.hidecontact {
     opacity: 0;
 }
 
 #info {
     position: relative;
-    left: 0.7%;
     margin-top: 25px;
+    text-align: center;
 }
 
 #info h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 3.5em;
+    font-size: 1.75em;
     font-weight: 300;
     text-transform: uppercase;
     color: #000;
 }
 
 #info hr {
-    width: 100px;
+    width: 60px;
     background-color: #000;    
-    height: 2px;
+    height: 1.5px;
 }
 
 #info p {
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
-    font-size: 1.5em;
-    margin-bottom: 50px;
+    font-size: 1.1em;
+    margin-bottom: 25px;
 }
 
 /*masonry layout*/
 .grid {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
 }
 
 .grid-item-content {
-  border: 2.5px solid hsla(0, 0%, 0%, 0.5);
-  border-radius: 5px;
-  margin-bottom: 5px;
+    border: 2.5px solid hsla(0, 0%, 0%, 0.5);
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
 .grid-item-content--height1 {
-    height: 475px;
+    height: 180px;
     overflow: hidden;  
 }
 
@@ -261,7 +282,7 @@ body, html {
 }
 
 .grid-item-content--height2 { 
-    height: 256px; 
+    height: 165px; 
     overflow: hidden;
 }
 
@@ -271,7 +292,7 @@ body, html {
 }
 
 .grid-item-content--height3 {
-    height: 220px;
+    height: 150px;
     overflow: hidden;
 }
 
@@ -281,7 +302,7 @@ body, html {
 }
 
 .grid-item-content--height4 {
-    height: 400px;
+    height: 150px;
     overflow: hidden;
 }
 
@@ -293,15 +314,13 @@ body, html {
 /*officers section*/
 #officers {
     position: relative;
-    left: 0.7%;
-    width: 1400px;
-    margin-top: 50px;
+    margin-top: 25px;
 }
 
 
 #officers h1 {
     font-family: 'Oswald', sans-serif;
-    font-size: 3.5em;
+    font-size: 1.7em;
     font-weight: 300;
     text-align: center;
     text-transform: uppercase;
@@ -309,22 +328,28 @@ body, html {
 }
 
 #officers h3 {
+    margin-left: 30px;
     font-family: 'Raleway', sans-serif;
     font-weight: 500;
-    font-size: 2em;
+    font-size: 1.2em;
 }
 
 #officers hr {
-    width: 200px;
+    width: 100px;
     background-color: #000;    
-    height: 2px;
+    height: 1.5px;
+}
+
+#officer-pics {
+    text-align: center;
 }
 
 .img-circle {
-    margin-top: 50px;
+    margin-left: 23px;
+    margin-top: 25px;
     border: 3px solid hsla(0, 0%, 0%, 0.5);
-    width: 175px;
-    height: 175px;
+    width: 125px;
+    height: 125px;
 }
 
 .caption {
@@ -333,7 +358,7 @@ body, html {
 
 /*officers masonry layout*/
 .grid-item-content--officer1 {
-    height: 560px;
+    height: 320px;
     overflow: hidden;
 }
 
@@ -343,9 +368,8 @@ body, html {
 }
 
 .grid-item-content--officer2 {
-    height: 240px;
+    height: 150px;
     overflow: hidden;
-    margin-bottom: 50px;
 }
 
 .grid-item-content--officer2 img {
@@ -354,7 +378,7 @@ body, html {
 }
 
 .grid-item-content--officer3 {
-    height: 350px;
+    height: 225px;
     overflow: hidden;
 }
 
@@ -364,10 +388,17 @@ body, html {
 }
 
 /*contact us section*/
+#contact {
+    font-family: 'Raleway';
+    text-align: center;
+    max-width: 550px;
+    margin-bottom: 100px;
+}
+
 #contact h1 {
-    margin-top: 50px;
+    margin-top: 25px;
     font-family: 'Oswald', sans-serif;
-    font-size: 3.5em;
+    font-size: 1.5em;
     font-weight: 300;
     text-align: center;
     text-transform: uppercase;
@@ -375,35 +406,19 @@ body, html {
 }
 
 #contact hr {
-    width: 200px;
-    background-color: #000;    
-    height: 2px;
+    width: 100px;
+    background-color: #000;  
+    height: 1.5px;
 }
 
 #contact h3 {
+    margin-left: 30px;
     font-family: 'Oswald', sans-serif;
-    font-size: 2em;
+    font-size: 1.1em;
     font-weight: 300;
     text-align: center;
     text-transform: uppercase;
     color: #000;    
-}
-
-#about-body hr {
-    height: 2px;
-    background-color: #000; 
-}
-
-#contact {
-    font-family: 'Raleway';
-    /*display: flex;*/
-    /*height: 100vh;*/
-    /*margin: 0;*/
-    /*justify-content: center;*/
-    /*align-items: center;*/
-    text-align: center;
-    max-width: 550px;
-    margin-bottom: 100px;
 }
 
 .social-container {
@@ -417,6 +432,7 @@ body, html {
 }
 
 .social-container .social-cube {
+    margin-left: 15px;
     position: absolute;
     left: 0;
     top: 0;
@@ -536,6 +552,7 @@ body, html {
         padding: 20px 50px 20px 70px;    
     }
     
+    /*home page*/
     #home-content {
         padding-top: 9%;
     }
@@ -575,6 +592,118 @@ body, html {
         font-family: 'Raleway', sans-serif;
         font-weight: 300;
     }
+    
+    /*about us*/
+    #about-title {
+        padding-left: 35px;
+    }
+    
+    #about-title h1 {
+        padding-top: 33%;
+        font-size: 4em;
+    }
+    
+    #about-title hr {
+        width: 150px;
+    }
+    
+    .arrow {
+        bottom: -40%;
+        left: 50%;
+        top: 50%;
+    }
+    
+    #info {
+        left: 2%;
+    }
+
+    #info h1 {
+        font-size: 2.75em;
+    }
+
+    #info hr {
+        width: 100px;
+    }
+
+    #info p {
+        font-size: 1.2em;
+        margin-bottom: 50px;
+    }
+    
+    .grid {
+        left: 2%
+    }
+    
+    .grid-item-content--height1 {
+        height: auto;
+    }
+
+    .grid-item-content--height2 { 
+        height: 150px; 
+    }
+
+    .grid-item-content--height3 {
+        height: auto;
+    }
+
+    .grid-item-content--height4 {
+        height: 260px;
+        margin-bottom: 50px;
+    }
+    
+    #officers {
+        left: 2%;
+    }
+
+    #officers h1 {
+        font-size: 2.75em;
+    }
+
+    #officers hr {
+        width: 140px;
+    }
+
+    .img-circle {
+        margin-top: 50px;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .grid-item-content--officer1 {
+        height: auto;
+    }
+
+    .grid-item-content--officer2 {
+        height: auto;
+    }
+
+    .grid-item-content--officer3 {
+        height: auto;
+    }
+    
+    #contact {
+        left: 5%;
+        max-width: 550px;
+        margin-bottom: 100px;
+    }
+
+    #contact h1 {
+        margin-top: 50px;
+        font-size: 2.75em;
+    }
+
+    #contact hr {
+        width: 150px;
+    }
+
+    #contact h3 {
+        margin-left: 0px;
+        font-size: 1.3em;  
+    }
+
+    .social-container .social-cube {
+        margin-left: 15px;
+    }
 }
 
 /* For medium device display */
@@ -585,7 +714,7 @@ body, html {
     
     #main-header .navbar-fat .navbar-nav > li > a {
         padding: 40px 0px 10px 0px;
-        font-size: 18px;    
+        font-size: 16px;    
     }
     
     #main-header .navbar-nav > li + li {
@@ -596,12 +725,14 @@ body, html {
         padding: 20px 20px 20px 70px;    
     }
     
+    /*home page*/
     #home-content {
         padding-top: 3.5%;
+        margin-left: 120px;
     }
     
     #home-content h1 {
-        font-size: 3em;
+        font-size: 2.8em;
     }
     
     #home-content h3 {
@@ -611,10 +742,127 @@ body, html {
     #home-content hr {
         width: 360px;
     }
+    
+    /*about us page*/
+    #about-title {
+        padding-left: 60px;
+    }
+    
+    #about-title h1 {
+        padding-top: 21%;
+        font-size: 4.75em;
+    }
+    
+    #about-title hr {
+        width: 200px;
+    }
+    
+    #info {
+        left: 1%;
+    }
+
+    #info h1 {
+        font-size: 3em;
+    }
+
+    #info hr {
+        width: 100px;
+    }
+
+    #info p {
+        font-size: 1.25em;
+        margin-bottom: 50px;
+    }
+    
+    .grid {
+        left: 1%;
+    }
+
+    .grid-item-content--height1 {
+        /*height: 475px; */
+        height: auto;
+    }
+
+    .grid-item-content--height2 { 
+        /*height: 250px; */
+        height: 210px;
+    }
+
+    .grid-item-content--height3 {
+        /*height: 220px;*/
+        height: auto;
+    }
+
+    .grid-item-content--height4 {
+        height: 400px;
+        margin-bottom: 50px;
+    }
+    
+    #officers {
+        left: 1%;
+    }
+
+    #officers h1 {
+        font-size: 3em;
+    }
+
+    #officers h3 {
+        font-size: 1.5em;
+    }
+
+    #officers hr {
+        width: 150px;
+    }
+
+    .img-circle {
+        margin-top: 50px;
+        width: 150px;
+        height: 150px;
+    }
+    
+    .grid-item-content--officer1 {
+        /*height: 550px;*/
+        height: auto;
+    }
+
+    .grid-item-content--officer2 {
+        /*height: 230px;*/
+        height: auto;
+        margin-bottom: 50px;
+    }
+
+    .grid-item-content--officer3 {
+        height: auto;
+        /*height: 340px;*/
+    }
+
+    #contact {
+        max-width: 550px;
+        margin-bottom: 100px;
+        /*margin-left: 20px;*/
+    }
+
+    #contact h1 {
+        margin-top: 50px;
+        font-size: 3em;
+    }
+
+    #contact hr {
+        width: 150px;
+    }
+
+    #contact h3 {
+        margin-left: 20px;
+        font-size: 1.5em;  
+    }
+
+    .social-container .social-cube {
+        margin-left: 20px;
+    }
 }
 
 /* For large device display*/
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1600px) {
     #logo {
         height: 600%;
     }
@@ -657,6 +905,14 @@ body, html {
     }
     
     /* About Us Page */
+    .about-bg {
+        background-position: 0% 45%;
+    }
+    
+    #about-title {
+        padding-left: 36px;
+    }
+    
     #about-title h1 {
         padding-top: 27%;
         font-size: 5em;
@@ -664,6 +920,82 @@ body, html {
     
     #about-title hr {
         width: 200px;
+    }
+
+    #info h1 {
+        font-size: 3.5em;
+    }
+
+    #info hr {
+        width: 100px;
+    }
+
+    #info p {
+        font-size: 1.5em;
+    }
+    
+    .grid-item-content--height1 {
+        height: 475px; 
+    }
+
+    .grid-item-content--height2 { 
+        height: 250px; 
+    }
+
+    .grid-item-content--height3 {
+        height: 220px;
+        height: auto;
+    }
+    
+    #officers {
+        margin-top: 50px;
+    }
+
+    #officers h1 {
+        font-size: 3.5em;
+    }
+
+    #officers h3 {
+        font-size: 2em;
+    }
+
+    #officers hr {
+        width: 200px;
+    }
+
+    .img-circle {
+        margin-top: 50px;
+        width: 175px;
+        height: 175px;
+    }
+    
+    .grid-item-content--officer1 {
+        height: 560px;
+    }
+
+    .grid-item-content--officer2 {
+        height: 240px;
+        margin-bottom: 50px;
+    }
+
+    .grid-item-content--officer3 {
+        height: 350px;
+    }
+    
+    #contact h1 {
+        font-size: 3.5em;
+    }
+
+    #contact hr {
+        width: 200px;
+    }
+
+    #contact h3 {
+        font-size: 2em;  
+    }
+
+    .social-container .social-cube {
+        margin-left: 0px;
     }
     
     /* Form Page */

@@ -1,4 +1,5 @@
 <% include ./partials/aheader %>
+<% include ../public/js/email %>
         <div class="container">
             <div class = "row">
                 <div class="col-lg-12">
@@ -11,7 +12,7 @@
         </div>
     </div>
     
-    <div class="container text-center" id="info">
+    <div class="container" id="info">
         <h1 class="hideinfo">Info</h1>
         <hr class="hideinfo">
         
@@ -24,24 +25,24 @@
     <div class="container">
     <!-- add extra container element for Masonry -->
         <div class="grid">
-            <div class="grid-sizer col-md-4 col-sm-12"></div>
-            <div class="grid-item col-md-4 col-sm-12">
+            <div class="grid-sizer col-md-4 col-sm-4"></div>
+            <div class="grid-item col-md-4 col-sm-4">
                 <!-- add inner element for column content -->
                 <div class="grid-item-content grid-item-content--height1 hideinfo">
                     <img src="../img/distanceBoard.jpg">
                 </div>
             </div>
-            <div class="grid-item col-md-8 col-sm-12">
+            <div class="grid-item col-md-8 col-sm-8">
                 <div class="grid-item-content grid-item-content--height2 hideinfo">
                     <img src="../img/grind2.jpg">
                 </div>
             </div>
-            <div class="grid-item col-md-4 col-sm-12">
+            <div class="grid-item col-md-4 col-sm-4">
                 <div class="grid-item-content grid-item-content--height3 hideinfo">
                     <img src="../img/lift1.jpg">    
                 </div>
             </div>
-            <div class="grid-item col-md-4 col-sm-12">
+            <div class="grid-item col-md-4 col-sm-4">
                 <div class="grid-item-content grid-item-content--height3 hideinfo">
                     <img src="../img/group3.jpg">    
                 </div>
@@ -54,10 +55,10 @@
         </div>
     </div>
     
-    <div class="container hideo" id="officers">
+    <div class="container-fluid hideo" id="officers">
         <h1>Officers</h1>
         <hr>
-        <div class="row text-center hideo" id="officer-pics">
+        <div class="row hideo" id="officer-pics">
             <div class="col-md-4 col-sm-6">
                 <img src="../img/Mr.Pres.jpg" class="img-circle">
                 <div class="caption">
@@ -79,24 +80,24 @@
         </div>
         
         <div class="grid">
-            <div class="grid-sizer col-md-4 col-sm-12"></div>
-            <div class="grid-item col-md-4 col-sm-12">
+            <div class="grid-sizer col-md-4 col-sm-4"></div>
+            <div class="grid-item col-md-4 col-sm-4">
                 <!-- add inner element for column content -->
                 <div class="grid-item-content grid-item-content--officer1 hideo">
                     <img src="../img/Mr.Pres2.jpg">
                 </div>
             </div>
-            <div class="grid-item col-md-4 col-sm-12">
+            <div class="grid-item col-md-4 col-sm-4">
                 <div class="grid-item-content grid-item-content--officer2 hideo">
                     <img src="../img/vp2.jpg">
                 </div>
             </div>
-            <div class="grid-item col-md-4 col-sm-12">
+            <div class="grid-item col-md-4 col-sm-4">
                 <div class="grid-item-content grid-item-content--officer3 hideo">
                     <img src="../img/communityOutreach2.jpg">    
                 </div>
             </div>
-            <div class="grid-item col-md-4 col-sm-12">
+            <div class="grid-item col-md-4 col-sm-4">
                 <div class="grid-item-content grid-item-content--officer2 hideo">
                     <img src="../img/vp3.jpg">    
                 </div>
@@ -136,7 +137,9 @@
             </div>
             <div class="col-md-4">
                 <h3>Email Us:</h3>
-                <a href="#" class="social-container gmail">
+                <!--<div class="social-container gmail">-->
+                <%- mail("shrednau","gmail",0,"") %>
+                <!--<a href="/about/contactus" class="social-container gmail">-->
                     <div class="social-cube">
                         <div class="front">
                             Gmail
@@ -146,6 +149,7 @@
                         </div>
                     </div>
                 </a>
+                <!--</div>-->
             </div>
         </div>
     </div>
