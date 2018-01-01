@@ -40,8 +40,11 @@ body, html {
 }
 
 .form-bg {
-    background: url('../img/grind.jpg') no-repeat fixed;
+    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/group2.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
+    background-position: 40% 35%;
 }
 
 /********** Navbar Editing **********/
@@ -237,6 +240,7 @@ body, html {
     position: relative;
     margin-top: 25px;
     text-align: center;
+    left: 3%;
 }
 
 #info h1 {
@@ -315,6 +319,7 @@ body, html {
 #officers {
     position: relative;
     margin-top: 25px;
+    left: 2%
 }
 
 

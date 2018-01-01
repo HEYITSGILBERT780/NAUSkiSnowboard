@@ -22,7 +22,7 @@
         <link rel="icon" href="../img/logo.png">
     </head>
     <body class="form-bg">
-        <div container="div">
+        <div class="container">
             <div class="row">
                 <div class="col-lg-12">
                     <div id="form-title">
@@ -30,11 +30,43 @@
                         <hr>
                     </div>
                 </div>
+                
+                <div class="col-sm-12">
+                    <form action="/events" method="POST">
+                        <div class="form-group">
+                            <label for="eventName">Event Name</label>
+                            <input type="text" name="eventSchema[eventName]" class="form-control" id="eventName" placeholder="Event Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Event Date</label>
+                            <input type="date" name="eventSchema[date]" class="form-control" id="eventDate">
+                        </div>
+                        <input type="checkbox" name="addEndDate" onclick="dateShow(this)" id="check1">
+                        <label for="check1">Add End Date</label>
+                        <span id="endDateSection"></span>
+                        <div class="form-group">
+                            <label for="eventLocation">Location</label>
+                            <input type="text" name="eventSchema[location]" class="form-control" id="eventLocation" placeholder="i.e. Mammoth">
+                        </div>
+                        <input type="checkbox" name="addDay" onclick="dayShow(this)" id="check2">
+                        <label for="check2">Add Day Description</label>
+                        <span id="daySection"></span>
+                        <!--<div class="form-group">-->
+                        <!--    <label for="eventDay">Select day:</label>-->
+                        <!--    <select class="form-control" name="eventSchema[day]" id="eventDay">-->
+                        <!--        <option>Monday</option>-->
+                        <!--        <option>Tuesday</option>-->
+                        <!--        <option>Wednesday</option>-->
+                        <!--        <option>Thursday</option>-->
+                        <!--        <option>Friday</option>-->
+                        <!--        <option>Saturday</option>-->
+                        <!--        <option>Sunday</option>-->
+                        <!--    </select>-->
+                        <!--</div>-->
+                        <!--<button>Add Another Day</button>-->
+                        <input type="submit">
+                    </form>                    
+                </div>
             </div>
         </div>
-        
-        <form action="/events" method="POST">
-            
-        </form>
-    
 <% include ./partials/footer%>

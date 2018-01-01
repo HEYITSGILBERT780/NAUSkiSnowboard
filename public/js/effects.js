@@ -48,12 +48,12 @@ $(window).on('load', function() {
     });
 });
 
-function lazyload(x, y) {
+function lazyload(element, y) {
     var windowTop = $(window).scrollTop();    //* top of the window
     var windowBottom = windowTop + $(window).height();        
     
     /* Check the location of each desired element */
-    $(x).each( function(){
+    $(element).each( function(){
         var objectTop = $(this).offset().top;
         var objectBottom = objectTop + $(this).height();
             
@@ -63,3 +63,28 @@ function lazyload(x, y) {
     }); 
 }
 
+/********* javascript *********/
+
+function dateShow(check) {
+    if (check.checked) {
+        var input = document.createElement("input");
+        input.type = "date";
+        input.name = "eventSchema[endDate]";
+        input.className = "form-control";
+        input.id = 'endDate';
+        
+        var label = document.createElement("label");
+        label.htmlFor = "endDate";
+        label.innerHTML = "End Date";
+        
+        var div = document.createElement("div");
+        div.className = "form-group";
+        div.id = check.name;
+        div.appendChild(label);
+        div.appendChild(input);
+        
+        document.getElementById("endDateSection").appendChild(div);
+    } else {
+        document.getElementById(check.name).remove();
+    }    
+}

@@ -11,15 +11,17 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 var eventSchema = new mongoose.Schema({
     eventName: { type: String, required: true },
-    date: { type: String, default: "TBA" },
+    date: { type: Date, default: "TBA" },
+    endDate: Date,
     location: String,
-    body: Boolean,
     day: {
         type: [String],
-        enum: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"]
+        enum: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     },
-    dayDescription: [String],
+    dayDescription: [String]
 });
+
+var Event = mongoose.model("Event", eventSchema);
 
 // LANDING PAGE: redirect to index route
 app.get("/", function(req, res) {
@@ -43,10 +45,15 @@ app.get("/about", function(req, res) {
     res.render("about");
 });
 
-// CREATE ROUTE
+// NEW FORM ROUTE
 app.get("/events/form", function(req, res) {
     res.render("form");    
 });
+
+// app.post("/events", function(req, res) {
+//     // create event
+//     Event.create(req.body) m
+// });
 
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("Server started");    
