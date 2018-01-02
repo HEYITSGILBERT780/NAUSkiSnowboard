@@ -536,6 +536,27 @@ body, html {
     text-transform: uppercase;
 }
 
+label {
+    color: #fff;
+}
+
+#btn {
+    margin-bottom: 10px;
+}
+
+#submitbtn {
+    display: block;
+}
+
+#backbtn {
+    margin-top: 10px;
+}
+
+#backbtn a {
+    color: black;
+    text-decoration: none;
+}
+
 /********** Media Queries **********/
 
 /* For small device display */

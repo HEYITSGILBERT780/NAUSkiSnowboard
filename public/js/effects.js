@@ -88,3 +88,60 @@ function dateShow(check) {
         document.getElementById(check.name).remove();
     }    
 }
+
+function dayShow(check) {
+	if (check.checked) {
+		createDaySection(check);
+		
+		var button = document.createElement("button");
+        button.innerHTML = "Add Another Day";
+        button.type = "button";
+        button.id = "btn";
+        button.name = "addAnotherDay";
+        button.onclick = function() { createDaySection(check) };
+		
+		document.getElementById("addButton").appendChild(button);
+	} else {
+	    document.getElementById("btn").remove();
+	    
+	    var elements = document.getElementsByClassName(check.name);
+        while(elements.length > 0){
+            elements[0].parentNode.removeChild(elements[0]);
+        }
+	}
+}
+
+function createDaySection(check) {
+    var dayLabel = document.createElement("label");
+	dayLabel.htmlFor = "eventDay";
+	dayLabel.innerHTML = "Select Day";
+
+	var select = document.createElement("select");
+    select.className = "form-control eventDay";
+    select.name = "eventSchema[day]";
+    
+    var dayArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+        
+    for (var i = 0; i < dayArray.length; i++) {
+        window["option" + i] = document.createElement("option");
+        window["option" + i].innerHTML = dayArray[i]; 
+        select.appendChild(window["option" + i]);
+    }
+        
+    var descLabel = document.createElement("label");
+	descLabel.htmlFor = "dayDesc";
+	descLabel.innerHTML = "Description";
+		
+    var input = document.createElement("input");
+    input.className = "form-control dayDesc";
+    input.name = "eventSchema[dayDescription]";
+
+	var div = document.createElement("div");
+	div.className = "form-group " + check.name;
+	div.appendChild(dayLabel);
+	div.appendChild(select);
+	div.appendChild(descLabel);
+	div.appendChild(input);
+	
+	document.getElementById("daySection").appendChild(div);
+}
