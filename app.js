@@ -81,18 +81,42 @@ app.post("/events", function(req, res) {
     });
 });
 
-// DELETE ROUTE
-app.get("/events/form/delete", function(req, res) {
+// SHOW EDIT/DELETE ROUTE
+app.get("/events/form/edit", function(req, res) {
     Event.find({}, function(err, events) {
         if(err){
             console.log(err);
         } else {
-            res.render("delete", {events: events});
+            res.render("edit", {events: events});
         }
     });
 });
 
-app.delete("/events/form/:id", function(req, res) {
+// EDIT ROUTE
+app.get("/events/form/edit/:id/editEvent", function(req, res) {
+    Event.findById(req.params.id, function(err, foundEvent) {
+        if (err) {
+            res.redirect("/events/form");
+        } else {
+            res.render("editEvent", {event: foundEvent});
+        }   
+    });    
+});
+
+// UPDATE ROUTE
+app.put("/events/form/edit/:id", function(req, res) {
+    // req.body.event.body = req.sanitize(req.body.event.body);
+    Event.findByIdAndUpdate(req.params.id, req.body.event, function(err, updatedEvent) {
+        if (err) {
+            res.redirect("/events/form");
+        } else {
+            res.redirect("/events");
+        }   
+    });
+});
+
+// DELETE ROUTE
+app.delete("/events/form/edit/:id", function(req, res) {
     Event.findByIdAndRemove(req.params.id, function(err) {
         if (err) {
             res.redirect("/events/form");

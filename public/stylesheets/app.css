@@ -132,6 +132,10 @@ body, html {
 
 /********** Events Page **********/
 
+#eventContainer {
+    margin-bottom: 100px;
+}
+
 #event-title {
     display: none;
 }
@@ -165,7 +169,7 @@ body, html {
     font-weight: 200;    
 }
 
-#date, #end{
+#date, #end {
     float: right;
 }
 
@@ -174,7 +178,7 @@ body, html {
     word-wrap: break-word;
 }
 
-#day, #description {
+#day, #description, #caption {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
@@ -184,6 +188,10 @@ body, html {
     margin-left: 5px;
 }
 
+#caption {
+    color: white;
+    text-align: center;
+}
 /********** About Us Page **********/
 
 #about-title {
@@ -593,7 +601,7 @@ label {
     float: right;
 }
 
-#deleteButton a {
+.changeButton a {
     color: white;
     text-decoration: none;
 }
@@ -603,7 +611,13 @@ label {
     text-decoration: none;
 }
 
-.actualDelete {
+.actualEdit a {
+    color: white;
+    text-decoration: none;
+}
+
+.actualDelete, .actualEdit {
+    margin: 5px;
     float: right;
 }
 

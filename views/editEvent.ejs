@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>NAU Ski & Snowboard</title>
+        
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="/stylesheets/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+        
+        <!-- Google Fonts -->
+        <!--<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">-->
+        <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
+        
+        <!-- Custom CSS -->
+        <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+        
+        <!-- favicon -->
+        <link rel="icon" href="../img/logo.png">
+    </head>
+    <body class="form-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div id="form-title">
+                        <h1>Edit <%= event.eventName %></h1>
+                        <hr>
+                    </div>
+                </div>
+                
+                <div class="col-sm-12">
+                    <form action="/events/form/edit/<%=event._id%>?_method=PUT" method="POST">
+                        <div class="form-group">
+                            <label for="eName">Event Name</label>
+                            <input type="text" name="event[eventName]" class="form-control" id="eName" value="<%= event.eventName %>">
+                        </div>
+                        <div class="form-group">
+                            <label for="eventDate">Event Date</label>
+                            <input type="date" name="event[date]" class="form-control" id="eventDate">
+                        </div>
+                        <input type="checkbox" onclick="dateShow(this)" id="addEndDate">
+                        <label for="addEndDate">Add End Date</label>
+                        <input type="checkbox" name=event[tba] id="tbaCheck">
+                        <label for="tbaCheck">To Be Announced?</label>
+                        <input type="checkbox" onclick="monthShow(this)" id="monthOnly">
+                        <label for="monthOnly">Display Only Month?</label>
+                        <span id="endDateSection"></span>
+                        <span id="showMonths"></span>
+                        <div class="form-group">
+                            <label for="eventLocation">Location</label>
+                            <input type="text" name="event[loc]" class="form-control" id="eventLocation" value="<%= event.loc %>">
+                        </div>
+                        <input type="checkbox" onclick="dayShow(this)" id="addDay">
+                        <label for="addDay">Add Day Description</label>
+                        <span id="daySection"></span>
+                        <span id="addButton"></span>
+                        <div class="btnSection">
+                            <input type="submit" class = "btn btn-success" id="submitbtn">
+                            <button type="button" class = "btn btn-default" id="backbtn"><a href="/events/form">Go Back to Form</a></button>
+                        </div>
+                    </form>                    
+                </div>
+            </div>
+        </div>
+<% include ./partials/footer%>
