@@ -5,19 +5,57 @@
                 <div id="event-title">
                     <h1>Upcoming Events</h1>
                     <hr>
-                    <% events.forEach(function(event) { %>
-                        <h2 id="name"><%=event.eventName%></h2>
-                        <span id="date"><%=event.date%></span>
-                        <span id="end"><%=event.endDate%></span>
-                        <p id="location"><%=event.loc%></p>
-                        <% for(var i= 0; i < event.day.length; i++) { %>
-                               <p><%=event.day[i]%></p>
-                        <% } %>
-                        <% for(var i= 0; i < event.dayDescription.length; i++) { %>
-                               <p id="description"><%=event.dayDescription[i]%></p>
-                        <% } %>
-                    <% }) %>
                 </div>
+            </div>
+                <% events.forEach(function(event) { %>
+                
+                    <% if (event.date != null && event.endDate == null && event.date < Date.now()) { %>
+                            <% event.remove() %>
+                    <% } else if (event.endDate != null && event.endDate < Date.now()){ %>
+                            <% event.remove() %>
+                    <% } else { %>
+                        <div class="allData">
+                            <div class="col-lg-8 section1">
+                                <% if (event.loc != "") { %>
+                                    <h3 id="name"><%=event.eventName%> -</h3>
+                                    <h3 id="location">&nbsp;<%=event.loc%></h3>
+                                <% } else { %>
+                                    <h3 id="name"><%=event.eventName%></h3>
+                                <% } %>
+                            </div>
+                            <div class="col-lg-4 section1">
+                                <% var monthNames = ["January", "February", "March", "April", "May", "June",
+                                "July", "August", "September", "October", "November", "December"] %>
+                                <% if (event.tba == "on") { %>
+                                    <h3 id="date">TBA</h3>
+                                <% } else if (event.endDate != null) { %>
+                                    <% if (event.date.getMonth() == event.endDate.getMonth()) { %>
+                                        <h3 id="end">&nbsp;<%=event.endDate.getDate()%></h3>
+                                        <h3 id="date"><%=monthNames[event.date.getMonth()]%> <%=event.date.getDate()%>&nbsp;-</h3>
+                                    <% } else { %>
+                                        <h3 id="end">&nbsp;<%=monthNames[event.endDate.getMonth()]%> <%=event.endDate.getDate()%></h3>
+                                        <h3 id="date"><%=monthNames[event.date.getMonth()]%> <%=event.date.getDate()%>&nbsp;-</h3>
+                                    <% } %>
+                                <% } else if (event.date != null) { %>
+                                    <h3 id="date"><%=monthNames[event.date.getMonth()]%> <%=event.date.getDate()%></h3>
+                                <% }  else if (event.month != null) { %>
+                                    <h3 id="date"><%=event.month%></h3>
+                                <% } %>
+                            </div>
+                        
+                            <div class="col-lg-1 section2">
+                                <% for(var i= 0; i < event.day.length; i++) { %>
+                                    <p id="day"><%=event.day[i]%>: </p>
+                                <% } %>
+                            </div>
+                            <div class="col-lg-9 descCol">
+                                <% for(var i= 0; i < event.dayDescription.length; i++) { %>
+                                    <p id="description"><%=event.dayDescription[i]%></p>
+                                <% } %>
+                            </div>
+                        </div>
+                    <% } %>
+                <% }) %>
             </div>
         </div>
     </div>

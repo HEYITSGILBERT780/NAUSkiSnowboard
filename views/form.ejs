@@ -12,8 +12,8 @@
         
         <!-- Google Fonts -->
         <!--<link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">-->
-        <link href="https://fonts.googleapis.com/css?family=Oswald:300,400" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Raleway:300,500" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Oswald:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:400,500" rel="stylesheet">
         
         <!-- Custom CSS -->
         <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
@@ -43,7 +43,12 @@
                         </div>
                         <input type="checkbox" onclick="dateShow(this)" id="addEndDate">
                         <label for="addEndDate">Add End Date</label>
+                        <input type="checkbox" name=event[tba] id="tbaCheck">
+                        <label for="tbaCheck">To Be Announced?</label>
+                        <input type="checkbox" onclick="monthShow(this)" id="monthOnly">
+                        <label for="monthOnly">Display Only Month?</label>
                         <span id="endDateSection"></span>
+                        <span id="showMonths"></span>
                         <div class="form-group">
                             <label for="eventLocation">Location</label>
                             <input type="text" name="event[loc]" class="form-control" id="eventLocation" placeholder="i.e. Mammoth">
@@ -52,8 +57,11 @@
                         <label for="addDay">Add Day Description</label>
                         <span id="daySection"></span>
                         <span id="addButton"></span>
-                        <input type="submit" id="submitbtn">
-                        <button type="button" id="backbtn"><a href="/events">Go Back to Event Page</a></button>
+                        <div class="btnSection">
+                            <button type="button" class="btn btn-danger" id="deleteButton"><a href="/events/form/delete">Delete an Event</a></button>
+                            <input type="submit" class = "btn btn-success" id="submitbtn">
+                            <button type="button" class = "btn btn-default" id="backbtn"><a href="/events">Go Back to Event Page</a></button>
+                        </div>
                     </form>                    
                 </div>
             </div>

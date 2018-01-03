@@ -21,7 +21,7 @@ body, html {
 }
 
 .events-bg {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/snowboard.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../img/snowboard.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 80%;
@@ -40,7 +40,7 @@ body, html {
 }
 
 .form-bg {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/group2.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../img/group2.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -143,6 +143,45 @@ body, html {
     color: #fff;
     text-align: center;
     text-transform: uppercase;
+}
+
+.allData {
+    display: none;
+    color: #fff;
+}
+
+.section1, section2 {
+    display: inline-block;
+    word-wrap: break-word;
+}
+
+.section2 {
+    clear: left;
+    margin-left: 30px;
+}
+
+#date, #end, #name, #location {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 200;    
+}
+
+#date, #end{
+    float: right;
+}
+
+#name {
+    float: left;
+    word-wrap: break-word;
+}
+
+#day, #description {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+}
+
+.descCol {
+    padding-left: 0;
+    margin-left: 5px;
 }
 
 /********** About Us Page **********/
@@ -537,6 +576,8 @@ body, html {
 }
 
 label {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
     color: #fff;
 }
 
@@ -544,17 +585,26 @@ label {
     margin-bottom: 10px;
 }
 
-#submitbtn {
-    display: block;
+.btnSection {
+    display: inline;
 }
 
 #backbtn {
-    margin-top: 10px;
+    float: right;
+}
+
+#deleteButton a {
+    color: white;
+    text-decoration: none;
 }
 
 #backbtn a {
     color: black;
     text-decoration: none;
+}
+
+.actualDelete {
+    float: right;
 }
 
 /********** Media Queries **********/

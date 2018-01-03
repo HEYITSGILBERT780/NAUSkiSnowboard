@@ -1,11 +1,11 @@
 NAU Ski and Snowboard Webpage
 
-First webpage made for a ski and snowboard club at Northern Arizona University. Includes a home page, 
+My first webpage made for a ski and snowboard club at Northern Arizona University. Includes a home page, 
 events page that lists the club's future events, and an about page that includes the club info,
 members, and contact info.
 
-Events can be added to the database using a form on a seperate form page. Events are displayed after
-adding them through a form.
+Events can be added to the database using a form on a separate form page and they can be deleted on a
+separate delete page. Events are displayed after adding them through a form.
 
 Webpage made using:
 Front-End - HTML5, CSS3, JavaScript, Bootstrap, and jQuery

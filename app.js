@@ -1,7 +1,8 @@
-var bodyParser = require("body-parser"),
-    express    = require("express"),
-    app        = express(),
-    mongoose   = require("mongoose");
+var bodyParser     = require("body-parser"),
+    methodOverride = require("method-override"),
+    express        = require("express"),
+    app            = express(),
+    mongoose       = require("mongoose");
 
 // APP CONFIG
 
@@ -9,6 +10,7 @@ mongoose.connect("mongodb://localhost/shrednau", {useMongoClient: true});
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride("_method"));
 
 // MODEL/MONGOOSE CONFIG
 
@@ -21,16 +23,12 @@ var eventSchema = new mongoose.Schema({
         type: [String],
         enum: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
     },
-    dayDescription: [String]
+    dayDescription: [String],
+    month: { type: String, default: null },
+    tba: { type: String, default: "off" }
 });
 
 var Event = mongoose.model("Event", eventSchema);
-
-Event.create({
-    eventName: 'Beets',
-    loc: "Mammoth",
-    day: ["Monday", "Tuesday", "Friday"]
-});
 
 // LANDING PAGE: redirect to index route
 app.get("/", function(req, res) {
@@ -65,6 +63,7 @@ app.get("/events/form", function(req, res) {
     res.render("form");    
 });
 
+// CREATE ROUTE
 app.post("/events", function(req, res) {
     // create event
     console.log("===========");
@@ -80,6 +79,27 @@ app.post("/events", function(req, res) {
             res.redirect("/events");
         }
     });
+});
+
+// DELETE ROUTE
+app.get("/events/form/delete", function(req, res) {
+    Event.find({}, function(err, events) {
+        if(err){
+            console.log(err);
+        } else {
+            res.render("delete", {events: events});
+        }
+    });
+});
+
+app.delete("/events/form/:id", function(req, res) {
+    Event.findByIdAndRemove(req.params.id, function(err) {
+        if (err) {
+            res.redirect("/events/form");
+        } else {
+            res.redirect("/events");
+        }
+    })    
 });
 
 app.listen(process.env.PORT, process.env.IP, function() {

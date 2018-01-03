@@ -7,6 +7,7 @@ $(document).ready(function() {
     $("#event-title").fadeIn(2000);
     $("#form-title").fadeIn(2000);
     $("#about-title").fadeIn(2000);
+    $(".allData").fadeIn(3000);
     
      /* Every time the window is scrolled load section */
     $(window).scroll( function(){
@@ -96,12 +97,13 @@ function dayShow(check) {
 		var button = document.createElement("button");
         button.innerHTML = "Add Another Day";
         button.type = "button";
-        button.id = "btn";
+        button.className = "btn btn-primary";
+        button.id = "add";
         button.onclick = function() { createDaySection(check) };
 		
 		document.getElementById("addButton").appendChild(button);
 	} else {
-	    document.getElementById("btn").remove();
+	    document.getElementById("add").remove();
 	    
 	    var elements = document.getElementsByClassName(check.id);
         while(elements.length > 0){
@@ -116,7 +118,8 @@ function createDaySection(check) {
 	dayLabel.innerHTML = "Select Day";
 
 	var select = document.createElement("select");
-    select.className = "form-control eventDay";
+    select.className = "form-control";
+    select.id = "eventDay"
     select.name = "event[day]";
     
     var dayArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
@@ -133,6 +136,7 @@ function createDaySection(check) {
 		
     var input = document.createElement("input");
     input.className = "form-control dayDesc";
+    input.id = "dayDesc";
     input.name = "event[dayDescription]";
 
 	var div = document.createElement("div");
@@ -143,4 +147,31 @@ function createDaySection(check) {
 	div.appendChild(input);
 	
 	document.getElementById("daySection").appendChild(div);
+}
+
+function monthShow(check) {
+    if (check.checked) {
+        var monthArray = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"];
+        
+        var select = document.createElement("select");
+        select.className = "form-control";
+        select.name = "event[month]";
+        
+        var div = document.createElement("div");
+        div.className = "form-group";
+        div.id = "monthDropdown";
+        
+        for (var i = 0; i < monthArray.length; i++) {
+            window["monthOption" + i] = document.createElement("option");
+            window["monthOption" + i].innerHTML = monthArray[i]; 
+            select.appendChild(window["monthOption" + i]);
+        }
+        
+        div.appendChild(select);
+        
+        document.getElementById("showMonths").appendChild(div);
+    } else {
+        document.getElementById("monthDropdown").remove();
+    }
 }
