@@ -69,7 +69,7 @@ function dateShow(check) {
     if (check.checked) {
         var input = document.createElement("input");
         input.type = "date";
-        input.name = "eventSchema[endDate]";
+        input.name = "event[endDate]";
         input.className = "form-control";
         input.id = 'endDate';
         
@@ -79,13 +79,13 @@ function dateShow(check) {
         
         var div = document.createElement("div");
         div.className = "form-group";
-        div.id = check.name;
+        div.id = "dateShow"
         div.appendChild(label);
         div.appendChild(input);
         
         document.getElementById("endDateSection").appendChild(div);
     } else {
-        document.getElementById(check.name).remove();
+        document.getElementById("dateShow").remove();
     }    
 }
 
@@ -97,14 +97,13 @@ function dayShow(check) {
         button.innerHTML = "Add Another Day";
         button.type = "button";
         button.id = "btn";
-        button.name = "addAnotherDay";
         button.onclick = function() { createDaySection(check) };
 		
 		document.getElementById("addButton").appendChild(button);
 	} else {
 	    document.getElementById("btn").remove();
 	    
-	    var elements = document.getElementsByClassName(check.name);
+	    var elements = document.getElementsByClassName(check.id);
         while(elements.length > 0){
             elements[0].parentNode.removeChild(elements[0]);
         }
@@ -118,7 +117,7 @@ function createDaySection(check) {
 
 	var select = document.createElement("select");
     select.className = "form-control eventDay";
-    select.name = "eventSchema[day]";
+    select.name = "event[day]";
     
     var dayArray = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
         
@@ -134,10 +133,10 @@ function createDaySection(check) {
 		
     var input = document.createElement("input");
     input.className = "form-control dayDesc";
-    input.name = "eventSchema[dayDescription]";
+    input.name = "event[dayDescription]";
 
 	var div = document.createElement("div");
-	div.className = "form-group " + check.name;
+	div.className = "form-group " + check.id;
 	div.appendChild(dayLabel);
 	div.appendChild(select);
 	div.appendChild(descLabel);

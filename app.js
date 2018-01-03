@@ -1,19 +1,22 @@
-var express    = require("express"),
+var bodyParser = require("body-parser"),
+    express    = require("express"),
     app        = express(),
-    bodyParser = require("body-parser"),
     mongoose   = require("mongoose");
 
 // APP CONFIG
-mongoose.connect("mongodb://localhost/nauss", {useMongoClient: true});
+
+mongoose.connect("mongodb://localhost/shrednau", {useMongoClient: true});
 app.set("view engine", "ejs");
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({extended: true}));
 
+// MODEL/MONGOOSE CONFIG
+
 var eventSchema = new mongoose.Schema({
-    eventName: { type: String, required: true },
-    date: { type: Date, default: "TBA" },
+    eventName: { type: String, required: true}, 
+    date: Date,
     endDate: Date,
-    location: String,
+    loc: String,
     day: {
         type: [String],
         enum: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
@@ -23,9 +26,15 @@ var eventSchema = new mongoose.Schema({
 
 var Event = mongoose.model("Event", eventSchema);
 
+Event.create({
+    eventName: 'Beets',
+    loc: "Mammoth",
+    day: ["Monday", "Tuesday", "Friday"]
+});
+
 // LANDING PAGE: redirect to index route
 app.get("/", function(req, res) {
-    res.redirect("/home");    
+    res.redirect("/home");     
 });
 
 // ROUTES
@@ -37,7 +46,13 @@ app.get("/home", function(req, res) {
 
 // EVENTS ROUTE
 app.get("/events", function(req, res) {
-    res.render("events");
+    Event.find({}, function(err, events) {
+        if(err){
+            console.log(err);
+        } else {
+            res.render("events", {events: events});
+        }
+    });
 });
 
 // ABOUT ROUTE
@@ -50,10 +65,22 @@ app.get("/events/form", function(req, res) {
     res.render("form");    
 });
 
-// app.post("/events", function(req, res) {
-//     // create event
-//     Event.create(req.body) m
-// });
+app.post("/events", function(req, res) {
+    // create event
+    console.log("===========");
+    console.log(req.body);
+    console.log("===========");
+    Event.create(req.body.event, function(err, newEvent) {
+        if(err) {
+            res.render("form");
+            console.log(err);
+        } else {
+            console.log(req.body.event);
+            console.log("===========");
+            res.redirect("/events");
+        }
+    });
+});
 
 app.listen(process.env.PORT, process.env.IP, function() {
     console.log("Server started");    
