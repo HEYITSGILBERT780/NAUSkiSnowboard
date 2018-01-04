@@ -198,8 +198,8 @@ body, html {
 
 #about-title {
     display: none;
-    margin-left: 25px;
-    padding-left: 25px;
+    /*margin-left: 25px;*/
+    /*padding-left: 25px;*/
 }
 
 #about-title h1 {
@@ -289,7 +289,7 @@ body, html {
     position: relative;
     margin-top: 25px;
     text-align: center;
-    left: 3%;
+    /*left: 3%;*/
 }
 
 #info h1 {
@@ -369,7 +369,7 @@ body, html {
 #officers {
     position: relative;
     margin-top: 25px;
-    left: 2%
+    /*left: 2%*/
 }
 
 
