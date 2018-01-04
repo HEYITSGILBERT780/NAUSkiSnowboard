@@ -1,7 +1,6 @@
 /* css for webpage and sizes follow mobile first design */
 body, html {
     height: 100%;
-    /*overflow-x: hidden;*/
 }
 
 .row {
@@ -22,17 +21,11 @@ body, html {
 
 .events-bg {
     background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../img/snowboard.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: 50% 80%;
-    background-size: cover;
 }
 
 .about-bg {
     background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/group1.jpg');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
     background-position: 50% 45%;
     height: 100%;
     position: relative;
@@ -41,10 +34,13 @@ body, html {
 
 .form-bg {
     background-image: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('../img/group2.jpg');
+    background-position: 40% 35%;
+}
+
+.events-bg, .about-bg, .form-bg {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    background-position: 40% 35%;
 }
 
 /********** Navbar Editing **********/
@@ -166,7 +162,6 @@ body, html {
 
 .section2 {
     clear: left;
-    /*margin-left: 30px;*/
 }
 
 #date, #end, #name, #location {
@@ -190,12 +185,7 @@ body, html {
     font-size: 10px;
 }
 
-/*#description {*/
-/*    float: right;*/
-/*}*/
-
 .descCol {
-    /*padding-left: 0;*/
     margin-left: 20px;
 }
 
@@ -335,8 +325,9 @@ body, html {
 }
 
 .grid-item-content--height1 {
-    height: 180px;
+    height: auto;
     overflow: hidden;  
+    display: none;
 }
 
 .grid-item-content--height1 img {
@@ -345,7 +336,7 @@ body, html {
 }
 
 .grid-item-content--height2 { 
-    height: 165px; 
+    height: auto; 
     overflow: hidden;
 }
 
@@ -355,7 +346,7 @@ body, html {
 }
 
 .grid-item-content--height3 {
-    height: 150px;
+    height: auto;
     overflow: hidden;
 }
 
@@ -365,7 +356,7 @@ body, html {
 }
 
 .grid-item-content--height4 {
-    height: 150px;
+    height: auto;
     overflow: hidden;
 }
 
@@ -422,7 +413,8 @@ body, html {
 
 /*officers masonry layout*/
 .grid-item-content--officer1 {
-    height: 320px;
+    /*height: 320px;*/
+    height: auto;
     overflow: hidden;
 }
 
@@ -432,7 +424,8 @@ body, html {
 }
 
 .grid-item-content--officer2 {
-    height: 150px;
+    /*height: 150px;*/
+    height: auto;
     overflow: hidden;
 }
 
@@ -442,7 +435,8 @@ body, html {
 }
 
 .grid-item-content--officer3 {
-    height: 225px;
+    /*height: 225px;*/
+    height: auto;
     overflow: hidden;
 }
 
@@ -765,6 +759,7 @@ label {
     
     .grid-item-content--height1 {
         height: auto;
+        display: block;
     }
 
     .grid-item-content--height2 { 
