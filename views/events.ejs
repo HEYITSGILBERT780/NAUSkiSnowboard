@@ -8,14 +8,8 @@
                 </div>
             </div>
                 <% events.forEach(function(event) { %>
-                
-                    <% if (event.date != null && event.endDate == null && event.date < Date.now()) { %>
-                            <% event.remove() %>
-                    <% } else if (event.endDate != null && event.endDate < Date.now()){ %>
-                            <% event.remove() %>
-                    <% } else { %>
                         <div class="allData">
-                            <div class="col-lg-8 section1">
+                            <div class="col-md-8 col-sm-8 col-xs-12 section1">
                                 <% if (event.loc != "") { %>
                                     <h3 id="name"><%=event.eventName%> -</h3>
                                     <h3 id="location">&nbsp;<%=event.loc%></h3>
@@ -23,7 +17,7 @@
                                     <h3 id="name"><%=event.eventName%></h3>
                                 <% } %>
                             </div>
-                            <div class="col-lg-4 section1">
+                            <div class="col-md-4 col-sm-4 col-xs-12 section1">
                                 <% var monthNames = ["January", "February", "March", "April", "May", "June",
                                 "July", "August", "September", "October", "November", "December"] %>
                                 <% if (event.tba == "on") { %>
@@ -43,21 +37,19 @@
                                 <% } %>
                             </div>
                         
-                            <div class="col-lg-1 section2">
+                            <div class="col-md-1 col-sm-1 col-xs-1 section2">
                                 <% for(var i= 0; i < event.day.length; i++) { %>
                                     <p id="day"><%=event.day[i]%>: </p>
                                 <% } %>
                             </div>
-                            <div class="col-lg-9 descCol">
+                            <div class="col-md-9 col-sm-9 col-xs-9 descCol">
                                 <% for(var i= 0; i < event.dayDescription.length; i++) { %>
                                     <p id="description"><%=event.dayDescription[i]%></p>
                                 <% } %>
                             </div>
                         </div>
-                    <% } %>
                 <% }) %>
             </div>
             <p id="caption">*Schedule and events are subject to change due to weather/snow conditions.</p>
         </div>
-    </div>
 <% include ./partials/footer %>

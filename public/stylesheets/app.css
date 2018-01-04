@@ -141,6 +141,7 @@ body, html {
 }
 
 #event-title h1 {
+    padding-top: 30%;
     font-family: 'Oswald', sans-serif;
     font-size: 1.5em;
     font-weight: 300;
@@ -149,24 +150,29 @@ body, html {
     text-transform: uppercase;
 }
 
+#event-title hr {
+    width: 125px;
+}
+
 .allData {
     display: none;
     color: #fff;
 }
 
-.section1, section2 {
+.section1 {
     display: inline-block;
     word-wrap: break-word;
 }
 
 .section2 {
     clear: left;
-    margin-left: 30px;
+    /*margin-left: 30px;*/
 }
 
 #date, #end, #name, #location {
     font-family: 'Raleway', sans-serif;
-    font-weight: 200;    
+    font-weight: 200; 
+    font-size: 18px;
 }
 
 #date, #end {
@@ -181,17 +187,23 @@ body, html {
 #day, #description, #caption {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
+    font-size: 10px;
 }
 
+/*#description {*/
+/*    float: right;*/
+/*}*/
+
 .descCol {
-    padding-left: 0;
-    margin-left: 5px;
+    /*padding-left: 0;*/
+    margin-left: 20px;
 }
 
 #caption {
     color: white;
     text-align: center;
 }
+
 /********** About Us Page **********/
 
 #about-title {
@@ -683,6 +695,33 @@ label {
         font-weight: 300;
     }
     
+    /*event page*/
+    #event-title h1 {
+        padding-top: 20%;
+        font-size: 2em;
+    }
+    
+    #event-title hr {
+        width: 170px;
+    }
+    
+    .section2 {
+        margin-left: 30px;
+    }
+    
+    #date, #end, #name, #location {
+        font-size: 20px;
+    }
+    
+    #day, #description, #caption {
+        font-size: 12px;
+    }
+    
+    .descCol {
+        padding-left: 0;
+        margin-left: 5px;
+    }
+    
     /*about us*/
     #about-title {
         padding-left: 35px;
@@ -831,6 +870,24 @@ label {
     
     #home-content hr {
         width: 360px;
+    }
+    
+    /*event page*/
+    #event-title h1 {
+        padding-top: 15%;
+        font-size: 2.5em;
+    }
+    
+    #event-title hr {
+        width: 200px;
+    }
+    
+    #date, #end, #name, #location {
+        font-size: 22px;
+    }
+    
+    #day, #description, #caption {
+        font-size: 14px;
     }
     
     /*about us page*/
@@ -992,6 +1049,10 @@ label {
     
     #event-title hr {
         width: 325px;
+    }
+    
+    #date, #end, #name, #location {
+        font-size: 24px;
     }
     
     /* About Us Page */
