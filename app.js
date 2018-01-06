@@ -2,7 +2,8 @@ var bodyParser     = require("body-parser"),
     methodOverride = require("method-override"),
     express        = require("express"),
     app            = express(),
-    mongoose       = require("mongoose");
+    mongoose       = require("mongoose"),
+    http = require("http");
 
 // APP CONFIG
 
@@ -30,6 +31,11 @@ var eventSchema = new mongoose.Schema({
 });
 
 var Event = mongoose.model("Event", eventSchema);
+
+// ping the site every 5 minutes to prevent sleep mode
+setInterval(function() {
+    http.get("http://shrednau.com");
+}, 300000); 
 
 // LANDING PAGE: redirect to index route
 app.get("/", function(req, res) {
