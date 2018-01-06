@@ -14,13 +14,13 @@ body, html {
 /********** Background Photos **********/
 
 .home-bg {
-    background: url('../img/ski.jpg') no-repeat fixed;
+    background: url('../img/ski-compressor.jpg') no-repeat fixed;
     background-position: center 32%;
     background-size: cover;
 }
 
 .events-bg {
-    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../img/snowboard.jpg');
+    background-image: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url('../img/snowboard-compressor.jpg');
     background-position: 50% 80%;
 }
 
