@@ -111,7 +111,6 @@ body, html {
     font-size: 1.5em;
     font-weight: 300;
     color: #fff;
-    text-align: center;
     text-transform: uppercase;
 }
 
@@ -120,7 +119,6 @@ body, html {
     font-size: 15px;
     font-weight: 300;
     color: #fff;
-    text-align: center;
 }
 
 #home-content hr {
@@ -145,7 +143,6 @@ body, html {
     font-size: 1.5em;
     font-weight: 300;
     color: #fff;
-    text-align: center;
     text-transform: uppercase;
 }
 
@@ -194,7 +191,6 @@ body, html {
 
 #caption {
     color: white;
-    text-align: center;
 }
 
 /********** About Us Page **********/
@@ -210,7 +206,6 @@ body, html {
     font-size: 2em;
     font-weight: 300;
     color: #fff;
-    text-align: center;
     text-transform: uppercase;
 }
 
@@ -290,8 +285,6 @@ body, html {
 #info {
     position: relative;
     margin-top: 25px;
-    text-align: center;
-    /*left: 3%;*/
 }
 
 #info h1 {
@@ -378,7 +371,6 @@ body, html {
     font-family: 'Oswald', sans-serif;
     font-size: 1.7em;
     font-weight: 300;
-    text-align: center;
     text-transform: uppercase;
     color: #000;
 }
@@ -394,10 +386,6 @@ body, html {
     width: 100px;
     background-color: #000;    
     height: 1.5px;
-}
-
-#officer-pics {
-    text-align: center;
 }
 
 .img-circle {
@@ -446,7 +434,6 @@ body, html {
 /*contact us section*/
 #contact {
     font-family: 'Raleway';
-    text-align: center;
     max-width: 550px;
     margin-bottom: 100px;
 }
@@ -456,7 +443,6 @@ body, html {
     font-family: 'Oswald', sans-serif;
     font-size: 1.5em;
     font-weight: 300;
-    text-align: center;
     text-transform: uppercase;
     color: #000;
 }
@@ -472,7 +458,6 @@ body, html {
     font-family: 'Oswald', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
-    text-align: center;
     text-transform: uppercase;
     color: #000;    
 }
